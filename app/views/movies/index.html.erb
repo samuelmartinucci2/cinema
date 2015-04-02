@@ -13,7 +13,10 @@
     <br/>
     <ul>
       <li data-ng-repeat="movie in movies | orderBy:'name':true | filter:search">
-        {{movie.id}} - {{movie.name | uppercase}} - {{movie.rating}}
+        {{movie.name | uppercase}}
+        <a href="javascript:" data-ng-click="getMovieById(movie.id)">Availability</a>
       </li>
     </ul>
+  </br>
+  <label data-ng-show="currMovie">Availabilty for {{currMovie.name}} is {{currMovie.availability}}</label>
 </div>

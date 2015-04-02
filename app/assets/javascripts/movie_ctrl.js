@@ -27,4 +27,15 @@ cinema.controller("cinemaController", function ($scope) {
             "thumb": "http://upload.wikimedia.org/wikipedia/en/6/66/Transformers07.jpg"
         }
     ];
+
+    $scope.currMovie = null;
+    $scope.getMovieById = function (id) {
+        var movies = $scope.movies;
+        for (var i = 0; i < movies.length; i++) {
+            var movie = $scope.movies[i];
+            if (movie.id == id) {
+                $scope.currMovie = movie;
+            }
+        }
+    };
 });
